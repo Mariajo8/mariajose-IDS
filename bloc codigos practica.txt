@@ -1,0 +1,532 @@
+
+EJERCICIO 1
+public class Main
+{
+	public static void main(String[] args) {
+
+        int costoFijo = 800;
+        int costoVariable = 20; 
+        int costoDeseado = 25; 
+
+        int cantidadMinima = (costoFijo / (costoDeseado - costoVariable)); 
+                int produccionMensual = cantidadMinima * 30; 
+
+
+        System.out.println("Cantidad mínima de sombreros a producir diariamente: " + cantidadMinima);
+        System.out.println("Producción mínima mensual: " + produccionMensual);
+    
+}
+}
+   
+..................................................................
+EJERCICIO 2
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese un número: ");
+        int num = scanner.nextInt();
+
+        
+        if (num <= 0) {
+            System.out.println("No es especial");
+        } else if (num % 3 != 0) {
+            System.out.println("No es especial");
+        } else if (num % 100 == 0 && num % 300 != 0) {
+            System.out.println("No es especial");
+        } else {
+            System.out.println("Es especial");
+        }
+        
+    }
+}
+
+
+
+...............................................................
+EJERCICIO 4
+
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sumaPuntos = 0;
+
+        System.out.println("Ingrese 20 números de la ficha:");
+
+        for (int i = 0; i < 20; i++) {
+            int numero = scanner.nextInt();
+            sumaPuntos += calculaPuntos(numero);
+        }
+
+        if (sumaPuntos > 70) {
+            System.out.println("¡Es una ficha ganadora!");
+        } else {
+            System.out.println("No es una ficha ganadora.");
+        }
+
+    }
+
+    
+}
+
+............................................................
+EJERCICIO 5
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Introduce un número de 6 o 7 dígitos: ");
+        String numero = scanner.nextLine();
+        
+        if (numero.length() >= 6 && numero.length() <= 7) {
+            if (esEspejo(numero)) {
+                System.out.println("Te tocó ir a las clases presenciales");
+            } else {
+                System.out.println("Te quedas en casita, ¡pero a estudiar!");
+            }
+        } else {
+            System.out.println("El número debe tener entre 6 y 7 dígitos.");
+        }
+        
+    }
+public static boolean esEspejo(String numero) {
+        StringBuilder reversed = new StringBuilder(numero).reverse();
+        return numero.equals(reversed.toString());
+}
+}
+
+
+............................................................
+EJERCICIO 6
+
+    .Declaramos un num de forma entera que sera 9 
+    .usamos una condicional con un bucle "while"lo cual num debe ser mayor a 0
+    .si el num es divisible a 2 es par y si no es impar 
+    .al resultado que salga le restamos 3
+    .el resultado seria 1.5 lo cual seria impar
+
+
+...............................................................
+EJERCICIO 7
+
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+public class main {
+    public static void main(String[] args) {
+        List<Integer> grupo1 = new ArrayList<>();
+        List<Integer> grupo2 = new ArrayList<>();
+        List<Integer> grupo3 = new ArrayList<>();
+        List<Integer> grupo4 = new ArrayList<>();
+
+
+        for (int edad = 10; edad <= 17; edad++) {
+            if (edad % 5 == 0 && edad % 2 != 0) {
+                grupo1.add(edad); 
+            } else if (edad % 4 == 0) {
+                grupo2.add(edad); 
+            } else if (edad % 3 == 0 && edad % 4 != 0 && edad % 5 != 0 && edad % 2 != 0) {
+                grupo3.add(edad); 
+            } else {
+                grupo4.add(edad); 
+            }
+        }
+
+        System.out.println("Grupo 1 (Múltiplo de 5 pero no de 2): " + grupo1);
+        System.out.println("Grupo 2 (Múltiplo de 4): " + grupo2);
+        System.out.println("Grupo 3 (Múltiplo de 3, pero no de 4, 5, ni 2): " + grupo3);
+        System.out.println("Grupo 4 (Resto de los estudiantes): " + grupo4);
+    }
+}
+
+............................................................................
+EJERCICIO 8
+
+.Primero se comprueba si el valor de numero es menor o igual a 1 y si lo es imprime no y ahi terminaria 
+.Segundo,caso contrario si e numero es mayor a 1 entra en el else
+.Tercero en el else , se usa un bucle for que empieza de 2 hasta la raiz cuadrada de numero,volviendose en un numero entero y sumandole 1 
+.Cuarto se verifica si el numero es divisible  por i ,si se encuentra un divisor se imprime no ,y si no se encuentra un divisor se imprime si 
+
+
+
+
+
+
+
+
+
+..........................................................................
+EJERCICIO 9
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el salario anual del empleado: ");
+        double salarioAnual = scanner.nextDouble();
+
+        System.out.print("Ingrese los puntos acumulados: ");
+        int puntos = scanner.nextInt();
+
+        double bonificacion = 0;
+
+        if (puntos < 50) {
+            System.out.println("No recibe bonificación.");
+        } else if (puntos >= 50 && puntos < 100) {
+            bonificacion = salarioAnual * 0.05;
+            System.out.println("Bonificación: " + bonificacion + " Bs.");
+        } else if (puntos >= 100) {
+            bonificacion = (salarioAnual * 0.10) + 500;
+            System.out.println("Bonificación: " + bonificacion + " Bs.");
+        }
+
+    }
+}
+.............................................................
+EJERCICIO 10 
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[] notas = new double[10];
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Ingrese la nota del estudiante " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+        }
+
+        System.out.println("Notas ingresadas:");
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Estudiante " + (i + 1) + ": " + notas[i]);
+        }
+
+        double suma = 0;
+        double notaMaxima = notas[0];
+        double notaMinima = notas[0];
+
+        for (int i = 0; i < 10; i++) {
+            suma += notas[i];
+            if (notas[i] > notaMaxima) {
+                notaMaxima = notas[i];
+            }
+            if (notas[i] < notaMinima) {
+                notaMinima = notas[i];
+            }
+        }
+
+        double promedio = suma / 10;
+
+        System.out.println("Promedio de notas: " + promedio);
+        System.out.println("Nota más alta: " + notaMaxima);
+        System.out.println("Nota más baja: " + notaMinima);
+
+    }
+}
+
+
+..............................................................................
+EJERCICO 11  
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        double costoBicicleta = 1200; 
+        double ahorroActual = 250; 
+        double ahorroPorSemana = 25; 
+        int semanas = 0; 
+
+        while (ahorroActual < costoBicicleta) {
+            ahorroActual += ahorroPorSemana; 
+            semanas++; 
+        }
+
+        System.out.println("María necesita ahorrar durante " + semanas + " semanas para comprar la bicicleta.");
+    }
+}
+
+
+
+..............................................................................
+EJERCCIO 12
+
+
+public class main {
+    public static void main(String[] args) {
+        double precioTotal = 3500; 
+        double pagoInicial = 500;   
+        double saldoRestante = precioTotal - pagoInicial; 
+        int meses = 0; 
+        while (saldoRestante > 100) {
+            double pagoMensual = saldoRestante * 0.15; 
+            saldoRestante -= pagoMensual; 
+            meses++; 
+        }
+
+        saldoRestante = 0; 
+        System.out.println("Total de meses para pagar la laptop: " + meses);
+        System.out.println("Pago final realizado para saldar la deuda de 100 Bs o menos.");
+    }
+}
+
+
+.....................................................................................
+EJERCICIO 13
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese la hora alemana (HH:MM): ");
+        String horaAlemania = scanner.nextLine();
+        
+        String[] partes = horaAlemania.split(":");
+        int horasAlemanas = Integer.parseInt(partes[0]);
+        int minutosAlemanes = Integer.parseInt(partes[1]);
+
+        int totalMinutosAlemanes = (horasAlemanas * 60) + minutosAlemanes;
+
+        int totalMinutosBolivianos = totalMinutosAlemanes - (6 * 60);
+
+        int horasBolivianas = totalMinutosBolivianos / 60;
+        int minutosBolivianos = totalMinutosBolivianos % 60;
+
+        if (horasBolivianas < 0) {
+            horasBolivianas += 24;
+        }
+
+      System.out.printf("La hora boliviana es:" horasBolivianas, minutosBolivianos);
+
+    }
+}
+
+...................................................................................
+EJERCICIO 15
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int largo = 100; 
+        int ancho = 60; 
+        int areaSala = largo * ancho; 
+        int mesasPorSala = areaSala / 2; 
+        int maxParticipantes = mesasPorSala * 3; 
+
+        int participantesInscritos = 0;
+
+        while (true) {
+            System.out.print("Introduce tu nombre (o 'salir' para terminar): ");
+            String nombre = scanner.nextLine();
+            if (nombre.equalsIgnoreCase("salir")) {
+                break;
+            }
+
+            System.out.print("Introduce tu edad: ");
+            int edad = scanner.nextInt();
+            scanner.nextLine(); 
+
+            if (edad > 15 && edad < 30) {
+                if (participantesInscritos < maxParticipantes) {
+                    participantesInscritos++;
+                    System.out.println("¡Felicidades! " + nombre + ", eres parte del evento.");
+                } else {
+                    System.out.println("Lo siento, " + nombre + ", el evento está lleno.");
+                }
+            } else {
+                System.out.println("Lo siento, " + nombre + ", tu edad no está en el rango definido.");
+            }
+        }
+
+        System.out.println("Gracias por participar en el Hackathon USB 2024!");
+    }
+}
+
+.....................................................................................................
+
+EJERCICIO 16
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int suma = 0;
+        int cantidadDados = 6;
+        
+        System.out.println("Lanza 6 dados. Introduce los valores (entre 1 y 6):");
+        
+        for (int i = 1; i <= cantidadDados; i++) {
+            System.out.print("Dado " + i + ": ");
+            int valorDado = scanner.nextInt();
+            
+            while (valorDado < 1 || valorDado > 6) {
+                System.out.print("Valor inválido. Introduce un número entre 1 y 6: ");
+                valorDado = scanner.nextInt();
+            }
+            
+            suma += valorDado;
+        }
+        
+        String tipoJugada;
+        if (suma <= 8) {
+            tipoJugada = "baja";
+        } else if (suma > 8 && suma <= 22) {
+            tipoJugada = "mediana";
+        } else if (suma > 22 && suma < 36) {
+            tipoJugada = "alta";
+        } else { // suma == 36
+            tipoJugada = "perfecta";
+        }
+        
+        System.out.println("La suma de los dados es: " + suma);
+        System.out.println("La jugada es: " + tipoJugada);
+            }
+}
+
+..........................................................................................
+
+EJERCICIO 17
+
+
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        double yenes = 285100;
+        double yenesPorDolar = 142.55;
+        double bolivianosPorDolarOficial = 6.85;
+        double bolivianosPorDolarReal = bolivianosPorDolarOficial * 1.5;
+
+        double dolares = yenes / yenesPorDolar;
+        double bolivianosOficial = dolares * bolivianosPorDolarOficial;
+        double bolivianosReal = dolares * bolivianosPorDolarReal;
+
+        System.out.printf("Equivalente en dólares: %.2f USD\n", dolares);
+        System.out.printf("Equivalente en bolivianos (cambio oficial): %.2f BOB\n", bolivianosOficial);
+        System.out.printf("Equivalente en bolivianos (cambio fuera de bancos): %.2f BOB\n", bolivianosReal);
+
+        if (dolares >= 1500) {
+            System.out.println("No requieres más fondos.");
+        } else {
+            System.out.println("Debes conseguir más fondos.");
+        }
+    }
+}
+
+
+................................................................................................
+
+EJERCICIO 21
+
+
+
+import java.util.Scanner;
+
+public class CorreosBolivianos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el número de paquetes a enviar: ");
+        int numPaquetes = scanner.nextInt();
+
+        double[] pesos = new double[numPaquetes];
+        for (int i = 0; i < numPaquetes; i++) {
+            System.out.print("Ingrese el peso del paquete " + (i + 1) + " (en gramos): ");
+            pesos[i] = scanner.nextDouble();
+        }
+
+        double pesoTotal = 0;
+        for (double peso : pesos) {
+            pesoTotal += peso;
+        }
+
+        boolean esConvenienteEnviarIndividual = true;
+        boolean esConvenienteEnviarEnConjunto = true;
+
+        for (double peso : pesos) {
+            if (!esTarifaValida(peso)) {
+                esConvenienteEnviarIndividual = false;
+                break;
+            }
+        }
+
+        if (!esTarifaValida(pesoTotal)) {
+            esConvenienteEnviarEnConjunto = false;
+        }
+
+        if (esConvenienteEnviarIndividual && esConvenienteEnviarEnConjunto) {
+            System.out.println("Es conveniente enviar cada paquete por separado y también enviar todos en conjunto.");
+        } else if (esConvenienteEnviarIndividual) {
+            System.out.println("Es conveniente enviar cada paquete por separado.");
+        } else if (esConvenienteEnviarEnConjunto) {
+            System.out.println("Es conveniente enviar todos los paquetes en conjunto.");
+        } else {
+            System.out.println("El peso de algunos paquetes o del total está fuera del rango de tarifas.");
+        }
+    }
+
+    private static boolean esTarifaValida(double peso) {
+        if (peso >= 0 && peso <= 20) {
+            return true;
+        } else if (peso > 20 && peso <= 50) {
+            return true;
+        } else if (peso > 50 && peso <= 100) {
+            return true;
+        } else if (peso > 100 && peso <= 200) {
+            return true;
+        } else if (peso > 200 && peso <= 350) {
+            return true;
+        } else if (peso > 350 && peso <= 500) {
+            return true;
+        } else if (peso > 500 && peso <= 1000) {
+            return true;
+        } else if (peso > 1000 && peso <= 2000) {
+            return true;
+        } else if (peso > 2000 && peso <= 3000) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+............................................................................................
+
+
+EJERCICIO 24
+
+.Variables= i y j
+.las estructuras de control son el uso del bucle de For i(1,10)y for j(1,2) ,la suma de mas 3,
+.imprimera el valor actual de i y j cada interaccion separardos por una coma 
+.impresion del codigo = (4,1)(7,1)(18,1)(13,1)(16,1)
+.la impresion del codigo quitando la linea tres =(1,1)(1,1)(2,1)(2,1)(3,1)(3,1)....
